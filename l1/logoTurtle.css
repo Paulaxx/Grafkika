@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+#turtle_canvas, #turtle_canvas2 {
+    float: left;
+    display: flex;
+    flex-flow: row;
+}
+  
+.instructions {
+    float: left;
+    padding: 18px;
+    position: relative;
+}
+  
+li, button, button2 {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#turtle_canvas, #turtle_canvas2 {
+    border: 1px solid #ffe5e5;
+    border-width: medium;
+    margin-right: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+  
