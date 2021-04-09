@@ -7,7 +7,7 @@ export class logoTurtle{
         this.canvas_height = canvas.height
         this.x = canvas.width / 2;
         this.y = canvas.height / 2;
-        this.context.strokeStyle = 'red'
+        this.context.strokeStyle = '#87CEEB'
         this.rotation = 90
         this.minX = 0
         this.minY = 0

@@ -1,4 +1,4 @@
-import { logoTurtle } from "/logoTurtle.js"
+import { logoTurtle } from "./logoTurtle.js"
 
 window.addEventListener('load', () => {
     const my_canvas = document.getElementById("turtle_canvas");
