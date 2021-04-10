@@ -46,10 +46,12 @@ export class logoTurtle{
         this.exec_command(comm, step);
     }
 
+
     exec_command(command, step){
         switch(command){
             case "fwd": {
-                this.walk((step/(this.maxY-this.minY))*this.canvas_height)
+                //this.walk((step/(this.maxY-this.minY))*this.canvas_height)
+                this.walk(step)
                 break;
             }
             case "bkw": {
@@ -73,5 +75,17 @@ export class logoTurtle{
                 break;
             }
         }
+    }
+
+    draw_triangle(x, y, step) {
+        this.rotation = 0
+        this.x = x
+        this.y = y
+        this.exec_command('fwd', step)
+        this.exec_command('lt', 120)
+        this.exec_command('fwd', step)
+        this.exec_command('lt', 120)
+        this.exec_command('fwd', step)
+        this.exec_command('lt', 120)
     }
 }

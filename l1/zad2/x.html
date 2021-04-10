@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<canvas id="sierpinskiCanvas" width="600" height="470" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+ 
+<script>
+function sierpinski(Ax,Ay,Bx,By,Cx,Cy,d,ctx) {
+    if(d>0) {
+        sierpinski(Ax,Ay,(Ax + Cx) / 2,(Ay + Cy) / 2,(Ax + Bx) / 2,(Ay + By) / 2,d-1,ctx);
+        sierpinski((Ax + Bx) / 2,(Ay + By) / 2,(Bx + Cx) / 2,(By + Cy) / 2,Bx,By,d-1,ctx);
+        sierpinski((Ax + Cx) / 2,(Ay + Cy) / 2,(Bx + Cx) / 2,(By + Cy) / 2,Cx,Cy,d-1,ctx);
+    }
+    else {
+        ctx.moveTo(Ax,Ay);
+        ctx.lineTo(Bx,By);
+        ctx.lineTo(Cx,Cy);
+        ctx.lineTo(Ax,Ay);
+    }
+}
+ 
+var ctx=document.getElementById("sierpinskiCanvas").getContext("2d");
+sierpinski(50,365.47,450,365.47,250,19.06,4,ctx);
+ctx.fillStyle = '#00FF00';
+ctx.fill();
+ctx.strokeStyle = 'black';
+ctx.lineWidth = 2;
+ctx.stroke();
+</script>
+ 
+</body>
+</html>

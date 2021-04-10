@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+#turtle_canvas3 {
+    float: left;
+    display: flex;
+    flex-flow: row;
+}
+  
+.instructions3 {
+    float: left;
+    padding: 18px;
+    position: relative;
+}
+  
+li, button, .buttons3 {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#turtle_canvas3 {
+    border: 1px solid #ffe5e5;
+    border-width: medium;
+    margin-right: 20px;
+}
+  
