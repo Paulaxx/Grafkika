@@ -14,6 +14,7 @@ export class logoTurtle{
         this.maxX = 100
         this.maxY = 100
         this.draw = true
+        this.sierpinski_or_koch = false
     }
 
     example(x, y) {
@@ -50,8 +51,10 @@ export class logoTurtle{
     exec_command(command, step){
         switch(command){
             case "fwd": {
-                //this.walk((step/(this.maxY-this.minY))*this.canvas_height)
-                this.walk(step)
+                if (this.sierpinski_or_koch)
+                    this.walk(step)
+                else
+                    this.walk((step/(this.maxY-this.minY))*this.canvas_height)
                 break;
             }
             case "bkw": {
