@@ -9,6 +9,9 @@ window.addEventListener('load', () => {
     const height = 720;
     const size = 500; 
     const step = 300;
+    var rotation = 90
+    var x = 250
+    var y = 500
     var str = ""
 
     function line(x1, y1, x2, y2, color, width) {
@@ -19,6 +22,21 @@ window.addEventListener('load', () => {
         var deep = degree_input.value;
         drawSierpinski(deep)
         svg.innerHTML = str
+        str = ""
+    })
+
+    koch_button.addEventListener('click', () => {
+        var deep = degree_input.value;
+        koch(step, deep)
+        command('rt', 120)
+        koch(step, deep)
+        command('rt', 120)
+        koch(step, deep)
+        command('rt', 120)
+
+        console.log(str)
+        svg.innerHTML = str
+        str = ""
     })
 
     function sierpinski(Ax,Ay,Bx,By,Cx,Cy,d) {
@@ -60,6 +78,49 @@ window.addEventListener('load', () => {
         var pointCy = midPointY-ru;
      
         sierpinski(pointAx,pointAy,pointBx,pointBy,pointCx,pointCy,deep);
+    }
+
+    function rotate(angle) {
+        rotation = ((rotation - angle) % 360 + 360) % 360;
+    }
+
+    function command(comm, param) {
+        switch(comm){
+            case "fwd": {
+                var x2 = x + param * Math.cos(rotation * Math.PI/180);
+                var y2 = y - param * Math.sin(rotation * Math.PI/180);
+                var l = line(x, y, x2, y2, 'red', 1)
+                console.log(x, y, x2, y2)
+                x = x2
+                y = y2
+                str += l
+                break;
+            }
+            case "lt": {
+                rotate(-param);
+                break;
+            }
+            case "rt": {
+                rotate(param);
+                break;
+            }
+        }
+    }
+
+    function koch(step, deep) {
+        if(deep == 0){
+            command('fwd', step)
+        }
+        else{
+            step = step/3
+            koch(step, deep-1)
+            command('lt', 60)
+            koch(step, deep-1)
+            command('rt', 120)
+            koch(step, deep-1)
+            command('lt', 60)
+            koch(step, deep-1)
+        }
     }
 
 });
