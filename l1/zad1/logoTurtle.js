@@ -88,4 +88,20 @@ export class logoTurtle{
         this.exec_command('fwd', step)
         this.exec_command('lt', 120)
     }
+
+    koch(step, deep) {
+        if(deep == 0){
+            this.exec_command('fwd', step)
+        }
+        else{
+            step = step/3
+            this.koch(step, deep-1)
+            this.exec_command('lt', 60)
+            this.koch(step, deep-1)
+            this.exec_command('rt', 120)
+            this.koch(step, deep-1)
+            this.exec_command('lt', 60)
+            this.koch(step, deep-1)
+        }
+    }
 }

@@ -6,12 +6,22 @@ window.addEventListener('load', () => {
     const sierpinski_button = document.getElementById("sierpinski");
     const koch_button = document.getElementById("koch");
     const logoturtle = new logoTurtle(my_canvas);
+    const logoturtle2 = new logoTurtle(my_canvas);
     const width = 720;
     const height = 720;
     const size = 500; 
+    const step = 300;
 
     koch_button.addEventListener('click', () => {
-
+        var deep = degree_input.value;
+        logoturtle2.context.lineWidth = 1;
+        logoturtle2.example(250,500)
+        logoturtle2.koch(step, deep)
+        logoturtle2.exec_command('rt', 120)
+        logoturtle2.koch(step, deep)
+        logoturtle2.exec_command('rt', 120)
+        logoturtle2.koch(step, deep)
+        logoturtle2.exec_command('rt', 120)
     })
 
     sierpinski_button.addEventListener('click', () => {
