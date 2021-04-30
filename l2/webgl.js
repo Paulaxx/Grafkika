@@ -35,6 +35,7 @@ export class WebGL {
     const program = this.gl.createProgram();
     this.gl.attachShader(program, vertexShader);
     this.gl.attachShader(program, fragmentShader);
+    this.gl.bindAttribLocation(program, 3, "a_position");
     this.gl.linkProgram(program);
 
     if (!this.gl.getProgramParameter(program, this.gl.LINK_STATUS)) {
@@ -55,7 +56,7 @@ export class WebGL {
     this.gl.clear(this.gl.COLOR_BUFFER_BIT);
 
     this.gl.useProgram(this.program);
-    this.gl.enableVertexAttribArray(this.locations.attributes.position);
+    this.gl.enableVertexAttribArray(3);
     this.gl.bindBuffer(this.gl.ARRAY_BUFFER, positionBuffer);
 
     this.gl.vertexAttribPointer(this.locations.attributes.position, 2, this.gl.FLOAT, false, 0, 0);
@@ -77,6 +78,8 @@ export class WebGL {
         const info = this.gl.getActiveUniform(this.program, i);
         console.log('name:', info.name, 'type:', info.type, 'size:', info.size);
     }
+
+    console.log("a_position location: ", this.gl.getAttribLocation(this.program, "a_position"));
 
   }
 
