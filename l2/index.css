@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+#webgl_canvas{
+    float: left;
+    display: flex;
+    flex-flow: row;
+}
+  
+.instructions {
+    float: left;
+    padding: 18px;
+    position: relative;
+}
+  
+li, buttons {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#webgl_canvas {
+    border: 1px solid #ffe5e5;
+    border-width: medium;
+    margin-right: 20px;
+}
