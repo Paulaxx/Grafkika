@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="react_to_keyboard.js"></script>
+        <script src="3DGame.js" type="module"></script>
+        <script src="game_canvas.js" type="module"></script>
+        <script src="cuboid.js" type="module"></script>
+        <link rel="stylesheet" href="3DGame.css">
+        <title>3D Game</title>
+    </head>
+    <body>
+        
+        <article>Gra polega na znalezieniu białego prostopadłościanu i najechaniu na niego (najszybciej można go znaleźć oddalając kamerę). Po najechaniu na czarny prostopadłościan - nasz cel, znika on
+            i pojawia się następny, w innym losowym miejscu. Po planszy możemy poruszać się do przodu - po naciśnięciu klawisza: 'W' oraz do tyłu - klawisz: 'S'.
+            Możemy także obracać kamerą za pomocą strzałek.
+        </article>
+        <main>
+            <canvas height="600" width="1400" id="3Dgame_canvas"></canvas>
+            <p>
+                Moves : 
+            <ul>
+                <li>W -> move forward</li>
+                <li>S -> move backward</li>
+                <li>arrow left and right -> turn camera left and right</li>
+                <li>arrow up and down -> turn camera up and down</li>
+            </ul>
+            </p>
+        </main>
+    </body>
+</html>
