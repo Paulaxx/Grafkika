@@ -1,0 +1,43 @@
+html {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    display: block;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.function_formula {
+    text-align: center
+}
+
+input {
+    padding: 10px;
+    width: 50%;
+}
+
+label, nav {
+    width: 2300px;
+    margin: 10px;
+}
+
+label {
+    display: block;
+    text-align: center;
+}
+
+canvas {
+    border:1px solid #000000;
+}
+
+.buttons {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    margin: 5px;
+}

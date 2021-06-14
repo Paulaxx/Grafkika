@@ -1,0 +1,28 @@
+<!DOCTYPE html >
+<html>
+  <head>
+		<link href="plots.css" rel="stylesheet" type="text/css"/>
+    <script src="skybox_utils.js"></script>
+    <script src="plots.js"></script>
+    <script src="cube-demo.js"></script>
+		<meta charset = "utf−8"/>
+  </head>
+  <body>
+      <nav>
+          <div class="function_formula">
+            <label>
+                Function: <input type="text" value="sin(x * y)" id="func">
+            </label>
+          </div>
+          <div class="buttons">
+            <button id="points">
+                POINTS
+            </button>
+            <button id="triangles">
+                TRIANGLES
+            </button>
+          </div>
+      </nav>
+      <canvas id="canvasGL"></canvas>
+  </body>
+</html>
