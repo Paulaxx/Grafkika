@@ -4,6 +4,7 @@ Simple symulation of drawing some shapes.
 
 ## zad2
 Drawing Sierpiński triangle and Koch snowflake using procedures from exercise 1.
+![Alt text](zad2/l1zad2.PNG?raw=true "")
 
 ## zad3
 Drawing Sierpiński triangle and Koch snowflake using SVG.
